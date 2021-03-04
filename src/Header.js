@@ -13,7 +13,7 @@ const Header = () => {
     >
       <Toolbar>
         <Typography variant="h5" component="h1">
-          Expense Tracker App
+          Expense Tracker App Shery
         </Typography>
       </Toolbar>
     </AppBar>
