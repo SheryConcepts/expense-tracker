@@ -1,16 +1,20 @@
 import React from "react"
 import { css } from "@emotion/react"
-import Hello from "./Hello.js"
+import Header from "./Header.js"
+import Status from "./Status.js"
+import Input from "./Input.js"
+import History from "./History.js"
+import GlobalState from "./GlobalState.js"
 
 const App = () => {
   return (
-    <div
-      css={css`
-        background-color: pink;
-      `}
-    >
-      <h1>I'm yellow</h1>
-      <Hello />
-    </div>
+    <GlobalState>
+      <Header />
+      <Status />
+      <Input />
+      <History />
+    </GlobalState>
   )
 }
+
+export default App
