@@ -7,18 +7,18 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
 
-  steps:
-    - name: checkout
-      uses: actions/checkout@v2.3.4
-    - name: setup Node
-      uses: actions/setup-node@v2
-      with:
-        node-version: 14
-    - name: Build
-      run: |
-        npm install
-        npm run build
-    - name: Install surge
-      run: npm install -g surge
-    - name: Deploy
-      run: surge ./build https://shery-expense-tracker.surge.sh --token ${{secrets.SURGE_TOKEN}}
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2.3.4
+      - name: setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+      - name: Build
+        run: |
+          npm install
+          npm run build
+      - name: Install surge
+        run: npm install -g surge
+      - name: Deploy
+        run: surge ./build https://shery-expense-tracker.surge.sh --token ${{secrets.SURGE_TOKEN}}
