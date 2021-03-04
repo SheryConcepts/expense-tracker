@@ -1,8 +1,9 @@
 body {
+  font: .9em/1.2 Arial, Helvetica, sans-serif;
   background: rgb(241, 241, 241);
   background: radial-gradient(
     circle,
     rgb(236, 233, 233) 0%,
     rgb(142, 146, 146) 100%
   );
-}
+
