@@ -5,23 +5,38 @@ import { css } from "@emotion/react"
 const Input = (props) => {
   return (
     <Paper
-      variant="elevation"
-      square
-      elevation={3}
       css={css`
-        grid-column: 5/9;
-        grid-row: 3;
+        grid-column: 2/5;
+        grid-row: 2;
       `}
     >
-      <form>
+      <form
+        css={css`
+          display: flex;
+          flex-flow: column;
+          align-items: center;
+          justify-content: space-around;
+        `}
+      >
         <TextField
           size="small"
           multiline={true}
           label="Title"
           id="title"
           variant="outlined"
+          css={css`
+            margin: 0.5rem;
+          `}
         />
-        <TextField size="small" label="Amount" id="amount" variant="outlined" />
+        <TextField
+          size="small"
+          label="Amount"
+          id="amount"
+          variant="outlined"
+          css={css`
+            margin: 0.5 rem;
+          `}
+        />
         <Button variant="contained" size="small">
           Submit
         </Button>

@@ -6,11 +6,11 @@ const Status = (props) => {
   return (
     <div
       css={css`
-        grid-column: 5/9;
+        grid-column: 5/12;
         grid-row: 2;
       `}
     >
-      <Paper elevation={3}>
+      <Paper color="primary" square>
         <Typography variant="h6">Balance</Typography>
         <Typography variant="h3">23$</Typography>
       </Paper>

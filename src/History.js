@@ -7,7 +7,8 @@ import { css } from "@emotion/react"
 const History = () => {
   const { items } = useContext(Context)
   return (
-    <Paper
+    <div
+      square
       css={css`
         grid-column: 5/9;
         grid-row: 4;
@@ -16,7 +17,7 @@ const History = () => {
       {items.map((item) => (
         <HistoryItem key={item.id} title={item.title} amount={item.amount} />
       ))}
-    </Paper>
+    </div>
   )
 }
 

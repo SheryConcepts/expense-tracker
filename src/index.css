@@ -1,8 +1,20 @@
+/* colors
+      primary: 
+          light: #ffad47
+          main: #e0983f
+          dark: #ad752f
+      secondary:
+          light: 
+
+
+*/
+
 body {
-  background: rgb(241, 241, 241);
-  background: radial-gradient(
-    circle,
-    rgb(236, 233, 233) 0%,
-    rgb(142, 146, 146) 100%
+  background: rgb(237, 232, 225);
+  background: linear-gradient(
+    90deg,
+    rgba(237, 232, 225, 1) 4%,
+    rgba(219, 214, 206, 1) 45%,
+    rgba(201, 198, 191, 1) 80%
   );
 }
