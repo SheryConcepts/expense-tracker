@@ -30,7 +30,7 @@ const Status = (props) => {
         `}
       >
         <Typography variant="h6" css={css``}>
-          Current Balance
+          Balance
         </Typography>
         <Typography variant="h1">23$</Typography>
       </Paper>
