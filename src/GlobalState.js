@@ -13,6 +13,22 @@ const initialState = [
     amount: 100,
     id: nanoid(),
   },
+
+  {
+    title: "bought Red Dead Redemption 2",
+    amount: 100,
+    id: nanoid(),
+  },
+  {
+    title: "bought Red Dead Redemption 2",
+    amount: 100,
+    id: nanoid(),
+  },
+  {
+    title: "bought Red Dead Redemption 2",
+    amount: 100,
+    id: nanoid(),
+  },
 ]
 
 export const Context = createContext()

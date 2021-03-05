@@ -8,6 +8,10 @@ const Input = (props) => {
       css={css`
         grid-column: 2/5;
         grid-row: 2;
+        @media (max-width: 800px) {
+          grid-column: 2/12;
+          grid-row: 3;
+        } ;
       `}
     >
       <form
@@ -34,10 +38,16 @@ const Input = (props) => {
           id="amount"
           variant="outlined"
           css={css`
-            margin: 0.5 rem;
+            margin: 0.5rem;
           `}
         />
-        <Button variant="contained" size="small">
+        <Button
+          css={css`
+            margin: 0.5rem;
+          `}
+          variant="contained"
+          size="small"
+        >
           Submit
         </Button>
       </form>

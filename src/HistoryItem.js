@@ -10,7 +10,12 @@ import {
 
 const HistoryItem = ({ title, amount }) => {
   return (
-    <Card variant="outlined">
+    <Card
+      css={css`
+        flex: 1 300px;
+      `}
+      variant="outlined"
+    >
       <CardContent>
         <Typography variant="body1">{title}</Typography>
         <Typography variant="body2">{amount}</Typography>
