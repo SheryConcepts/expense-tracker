@@ -1,8 +1,12 @@
 import { Paper, Typography } from "@material-ui/core"
 import ExpenseChild from "./Expense-Child"
 import { css } from "@emotion/react"
+import { useContext } from "react"
+import { Context } from "./GlobalState.js"
 
 const Status = (props) => {
+  // const { BALANCE } = useContext(Context)
+
   return (
     <div
       css={css`
@@ -29,10 +33,8 @@ const Status = (props) => {
           justify-content: space-evenly;
         `}
       >
-        <Typography variant="h6" css={css``}>
-          Balance
-        </Typography>
-        <Typography variant="h1">23$</Typography>
+        <Typography variant="h6">Balance</Typography>
+        <Typography variant="h1">100$</Typography>
       </Paper>
       <div
         css={css`

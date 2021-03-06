@@ -8,7 +8,6 @@ const History = () => {
   const { items } = useContext(Context)
   return (
     <div
-      square
       css={css`
         grid-column: 2/12;
         grid-row: 4;
@@ -32,7 +31,12 @@ const History = () => {
         `}
       >
         {items.map((item) => (
-          <HistoryItem key={item.id} title={item.title} amount={item.amount} />
+          <HistoryItem
+            key={item.id}
+            id={item.id}
+            title={item.title}
+            amount={item.amount}
+          />
         ))}
       </div>
     </div>

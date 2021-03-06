@@ -1,8 +1,27 @@
-import React from "react"
+import React, { useContext, useState } from "react"
 import { Paper, TextField, Button, Grid } from "@material-ui/core"
 import { css } from "@emotion/react"
+import { Context } from "./GlobalState.js"
+import { nanoid as id } from "nanoid"
 
 const Input = (props) => {
+  const [title, setTitle] = useState()
+  const [amount, setAmount] = useState()
+
+  const onChangeTitle = (e) => {
+    setTitle(e.target.value)
+  }
+
+  const onChangeAmount = (e) => {
+    setAmount(e.target.value)
+  }
+
+  const { ADD } = useContext(Context)
+
+  const handleSubmit = () => {
+    ADD(title, amount, id())
+  }
+
   return (
     <Paper
       css={css`
@@ -31,15 +50,18 @@ const Input = (props) => {
           css={css`
             margin: 0.5rem;
           `}
+          onChange={onChangeTitle}
         />
         <TextField
           size="small"
           label="Amount"
           id="amount"
           variant="outlined"
+          type="number"
           css={css`
             margin: 0.5rem;
           `}
+          onChange={onChangeAmount}
         />
         <Button
           css={css`
@@ -47,6 +69,7 @@ const Input = (props) => {
           `}
           variant="contained"
           size="small"
+          onClick={handleSubmit}
         >
           Submit
         </Button>

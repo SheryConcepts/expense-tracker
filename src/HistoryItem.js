@@ -7,8 +7,16 @@ import {
   Typography,
   Button,
 } from "@material-ui/core"
+import { useContext } from "react"
+import { Context } from "./GlobalState.js"
 
-const HistoryItem = ({ title, amount }) => {
+const HistoryItem = ({ id, title, amount }) => {
+  const { REMOVE } = useContext(Context)
+
+  const handleRemove = () => {
+    REMOVE(id)
+  }
+
   return (
     <Card
       css={css`
@@ -21,7 +29,15 @@ const HistoryItem = ({ title, amount }) => {
         <Typography variant="body2">{amount}</Typography>
       </CardContent>
       <CardActions>
-        <Button variant="text">remove</Button>
+        <Button
+          variant="text"
+          css={css`
+            color: red;
+          `}
+          onClick={handleRemove}
+        >
+          remove
+        </Button>
       </CardActions>
     </Card>
   )
