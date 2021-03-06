@@ -1,4 +1,4 @@
-## react-dev-setup
+## Expense Tracker
 
 ## Building and running on localhost
 
