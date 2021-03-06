@@ -5,7 +5,33 @@ import { useContext } from "react"
 import { Context } from "./GlobalState.js"
 
 const Status = (props) => {
-  const { BALANCE } = useContext(Context)
+  const { items } = useContext(Context)
+
+  const balance = () => {
+    const balance = items
+      .map((item) => item.amount)
+      .reduce((acc, val) => acc + val, 0)
+    return balance
+  }
+  const BALANCE = balance()
+
+  const Income = () => {
+    let Income = items
+      .filter((item) => item.amount >= 0)
+      .map((item) => item.amount)
+      .reduce((acc, val) => acc + val, 0)
+    return Income
+  }
+  const INCOME = Income()
+
+  const Expense = () => {
+    let Expense = items
+      .filter((item) => item.amount < 0)
+      .map((item) => item.amount)
+      .reduce((acc, val) => acc + val, 0)
+    return Expense * -1
+  }
+  const EXPENSE = Expense()
 
   return (
     <div
@@ -42,7 +68,7 @@ const Status = (props) => {
           grid-row: 1;
         `}
       >
-        <ExpenseChild title="Income" amount={29} />
+        <ExpenseChild title="Income" amount={INCOME} />
       </div>
       <div
         css={css`
@@ -51,7 +77,7 @@ const Status = (props) => {
           border-right: 1% solid red;
         `}
       >
-        <ExpenseChild title="Expense" amount={78} />
+        <ExpenseChild title="Expense" amount={EXPENSE} />
       </div>
     </div>
   )

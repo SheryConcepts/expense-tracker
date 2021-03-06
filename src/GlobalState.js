@@ -1,35 +1,7 @@
 import { createContext, useReducer } from "react"
 import { nanoid } from "nanoid"
 
-const initialState = [
-  {
-    title: "bought Red Dead Redemption 2",
-    amount: 100,
-    id: nanoid(),
-  },
-
-  {
-    title: "bought Red Dead Redemption 2",
-    amount: 100,
-    id: nanoid(),
-  },
-
-  {
-    title: "bought Red Dead Redemption 2",
-    amount: 100,
-    id: nanoid(),
-  },
-  {
-    title: "bought Red Dead Redemption 2",
-    amount: 100,
-    id: nanoid(),
-  },
-  {
-    title: "bought Red Dead Redemption 2",
-    amount: 100,
-    id: nanoid(),
-  },
-]
+const initialState = []
 
 export const Context = createContext()
 
@@ -75,11 +47,20 @@ const GlobalState = (props) => {
     return balance
   }
 
+  const Income = () => {
+    let Income = state
+      .filter((item) => item.amount >= 0)
+      .map((item) => item.amount)
+      .reduce((acc, val) => acc + val)
+    return Income
+  }
+
   const value = {
     items: state,
     ADD,
     REMOVE,
-    BALANCE: balance(),
+    // BALANCE: balance(),
+    // INCOME: Income(),
   }
   return <Context.Provider value={value}>{props.children}</Context.Provider>
 }

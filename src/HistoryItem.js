@@ -26,7 +26,7 @@ const HistoryItem = ({ id, title, amount }) => {
     >
       <CardContent>
         <Typography variant="body1">{title}</Typography>
-        <Typography variant="body2">{amount}</Typography>
+        <Typography variant="body2">{amount}$</Typography>
       </CardContent>
       <CardActions>
         <Button
