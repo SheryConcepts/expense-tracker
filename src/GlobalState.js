@@ -31,17 +31,6 @@ const initialState = [
   },
 ]
 
-const calculateBalance = () => {
-  let balance
-  if (balance === undefined) {
-    balance = 0
-  }
-  for (let i of initialState) {
-    balance = balance + i.amount
-  }
-}
-calculateBalance()
-
 export const Context = createContext()
 
 const Reducer = (state, action) => {
@@ -79,21 +68,18 @@ const GlobalState = (props) => {
     })
   }
 
-  const calculateBalance = () => {
-    let balance
-    if (balance === undefined) {
-      balance = 0
-    }
-    for (let i of state) {
-      balance = balance + i.amount
-    }
+  const balance = () => {
+    const balance = state
+      .map((item) => item.amount)
+      .reduce((acc, val) => acc + val)
+    return balance
   }
-  calculateBalance()
+
   const value = {
     items: state,
     ADD,
     REMOVE,
-    // BALANCE: calculateBalance(),
+    BALANCE: balance(),
   }
   return <Context.Provider value={value}>{props.children}</Context.Provider>
 }

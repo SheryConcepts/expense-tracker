@@ -6,7 +6,7 @@ import { nanoid as id } from "nanoid"
 
 const Input = (props) => {
   const [title, setTitle] = useState()
-  const [amount, setAmount] = useState()
+  const [amount, setAmount] = useState(0)
 
   const onChangeTitle = (e) => {
     setTitle(e.target.value)
@@ -19,7 +19,7 @@ const Input = (props) => {
   const { ADD } = useContext(Context)
 
   const handleSubmit = () => {
-    ADD(title, amount, id())
+    ADD(title, Number(amount), id())
   }
 
   return (
@@ -53,6 +53,7 @@ const Input = (props) => {
           onChange={onChangeTitle}
         />
         <TextField
+          helperText="Enter a valid number"
           size="small"
           label="Amount"
           id="amount"

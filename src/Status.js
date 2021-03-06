@@ -5,7 +5,7 @@ import { useContext } from "react"
 import { Context } from "./GlobalState.js"
 
 const Status = (props) => {
-  // const { BALANCE } = useContext(Context)
+  const { BALANCE } = useContext(Context)
 
   return (
     <div
@@ -34,7 +34,7 @@ const Status = (props) => {
         `}
       >
         <Typography variant="h6">Balance</Typography>
-        <Typography variant="h1">100$</Typography>
+        <Typography variant="h1">{BALANCE}$</Typography>
       </Paper>
       <div
         css={css`
